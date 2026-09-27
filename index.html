@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#071014">
+  <meta name="description" content="Humanoid Planning — from goals to grounded robot action. A concept platform for task reasoning, action sequencing, motion planning and adaptive replanning.">
+  <title>Humanoid Planning — From Goal to Grounded Action</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <header class="nav">
+    <a class="brand" href="#top"><span class="brand-mark">H</span><span>HUMANOID<span class="muted">PLANNING</span></span></a>
+    <nav>
+      <a href="#stack">Planning Stack</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#demo">Planner</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="#demo">Explore Planner <span>↗</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="eyebrow"><span class="pulse"></span> HUMANOID ROBOT PLANNING / PHYSICAL AI</div>
+      <h1>From <em>goal</em><br>to grounded action.</h1>
+      <p class="hero-copy">A planning intelligence layer for humanoid robots — connecting goals, world state, constraints and feedback to executable action sequences.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#demo">Run a planning example <span>→</span></a>
+        <a class="button ghost" href="#stack">Explore the stack</a>
+      </div>
+      <div class="signal-row">
+        <span>GOAL</span><i></i><span>WORLD MODEL</span><i></i><span>REASONING</span><i></i><span>ACTION</span><i></i><span>FEEDBACK</span>
+      </div>
+    </section>
+
+    <section class="statement">
+      <div class="section-label">01 / THE PLANNING PROBLEM</div>
+      <div>
+        <h2>Perception tells a robot <span>what is there.</span><br>Planning determines <span>what happens next.</span></h2>
+        <p>Humanoid robots operate in open-ended environments where tasks unfold over multiple steps. A useful planning layer must decompose objectives, respect physical constraints, select actions, monitor outcomes and re-plan when reality changes.</p>
+      </div>
+    </section>
+
+    <section id="stack" class="stack-section">
+      <div class="section-head">
+        <div>
+          <div class="section-label">02 / PLANNING STACK</div>
+          <h2>A loop from intent<br>to execution.</h2>
+        </div>
+        <p>The planning layer sits between high-level intent and low-level robot control, continuously incorporating observations and feedback.</p>
+      </div>
+      <div class="stack">
+        <div class="stack-node active"><b>01</b><strong>Goal</strong><small>What should be achieved?</small></div>
+        <div class="connector"></div>
+        <div class="stack-node"><b>02</b><strong>World Model</strong><small>What is true now?</small></div>
+        <div class="connector"></div>
+        <div class="stack-node"><b>03</b><strong>Task Reasoning</strong><small>What sequence makes sense?</small></div>
+        <div class="connector"></div>
+        <div class="stack-node"><b>04</b><strong>Action Plan</strong><small>What should the robot do?</small></div>
+        <div class="connector"></div>
+        <div class="stack-node"><b>05</b><strong>Motion</strong><small>How can the body execute it?</small></div>
+        <div class="connector"></div>
+        <div class="stack-node"><b>06</b><strong>Feedback</strong><small>Did it work?</small></div>
+      </div>
+      <div class="loop-note">↻ <span>Observe → Plan → Act → Verify → Re-plan</span></div>
+    </section>
+
+    <section id="capabilities" class="cap-section">
+      <div class="section-label">03 / CORE CAPABILITIES</div>
+      <div class="cap-grid">
+        <article><span>01</span><h3>Task Decomposition</h3><p>Turn high-level objectives into ordered, executable subgoals.</p></article>
+        <article><span>02</span><h3>World-Aware Planning</h3><p>Reason over objects, spatial relationships, constraints and changing state.</p></article>
+        <article><span>03</span><h3>Long-Horizon Tasks</h3><p>Coordinate many actions while maintaining the original objective.</p></article>
+        <article><span>04</span><h3>Motion-Aware Actions</h3><p>Connect symbolic decisions with physically feasible robot behavior.</p></article>
+        <article><span>05</span><h3>Adaptive Replanning</h3><p>Update the plan when observations or environmental conditions diverge.</p></article>
+        <article><span>06</span><h3>Closed-Loop Execution</h3><p>Use feedback after every meaningful step instead of assuming success.</p></article>
+      </div>
+    </section>
+
+    <section id="demo" class="demo-section">
+      <div class="section-head">
+        <div>
+          <div class="section-label">04 / CONCEPT PLANNER</div>
+          <h2>Give the robot<br>a goal.</h2>
+        </div>
+        <p>Try a planning scenario. This interactive demonstration illustrates the concept of goal decomposition and adaptive execution; it is not presented as a production robotics system.</p>
+      </div>
+      <div class="planner">
+        <div class="planner-input">
+          <label for="goal">ROBOT GOAL</label>
+          <textarea id="goal" rows="3">Prepare the workstation</textarea>
+          <button id="planBtn" class="button primary">Generate plan <span>→</span></button>
+          <div class="examples">
+            <button data-goal="Prepare the workstation">Workstation</button>
+            <button data-goal="Pick up the red container">Manipulation</button>
+            <button data-goal="Bring the tool to the operator">Collaboration</button>
+          </div>
+        </div>
+        <div class="plan-output">
+          <div class="output-top"><span>PLAN TRACE</span><span id="status">READY</span></div>
+          <div id="steps" class="steps">
+            <div class="empty">Enter a goal and generate a planning trace.</div>
+          </div>
+          <div class="replan"><span class="dot"></span> CONTINUOUS FEEDBACK LOOP <span>RE-PLANNING ENABLED</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="use-section">
+      <div class="section-label">05 / WHERE IT FITS</div>
+      <h2>Planning for the<br><em>physical AI era.</em></h2>
+      <div class="use-grid">
+        <div>INDUSTRIAL HUMANOIDS</div><div>WAREHOUSE ROBOTICS</div><div>HUMAN-ROBOT COLLABORATION</div>
+        <div>GENERAL-PURPOSE ROBOTS</div><div>HOUSEHOLD TASKS</div><div>ROBOT LEARNING & SIMULATION</div>
+      </div>
+    </section>
+
+    <section id="contact" class="cta">
+      <div class="section-label">06 / THE IDEA</div>
+      <h2>Humanoid robots need<br>to know <em>what to do next.</em></h2>
+      <p>HumanoidPlanning.com is a focused concept around the planning intelligence layer between perception, reasoning and embodied action.</p>
+      <a class="button primary" href="mailto:hello@humanoidplanning.com">Start a conversation <span>→</span></a>
+      <div class="domain">HUMANOIDPLANNING.COM</div>
+    </section>
+  </main>
+
+  <footer><span>© 2026 Humanoid Planning</span><span>Concept platform · Physical AI · Humanoid Robotics</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
